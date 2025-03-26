@@ -32,5 +32,9 @@ public class Main {
         System.out.println("\nFilmes ordenados pelo ano de lançamento em ordem crescente: ");
         locadora.ordenarFilmesPorAno()
                 .forEach(filme -> System.out.println(filme.getTitulo() + " | " + filme.getDiretor() + " | " + filme.getAnoLancamento()));
+
+        System.out.println("\nContagem de filmes por autor:");
+        locadora.contagemFilmesPorDiretor()
+                .forEach((diretor, quantidade) -> System.out.println("Diretor: " + diretor + " | N° de filmes: " + quantidade));
     }
 }
