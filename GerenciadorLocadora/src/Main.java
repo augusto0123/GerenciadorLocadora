@@ -23,5 +23,10 @@ public class Main {
         locadora.adicionarFilme(filme5);
         locadora.adicionarFilme(filme6);
 
+        System.out.println("Forneça o titulo procurado: ");
+        String titulo = scanner.nextLine();
+
+        locadora.buscarFilmePorTitulo(titulo)
+                .forEach(filme -> System.out.println("Titulo: " + filme.getTitulo() + "\nDiretor: " + filme.getDiretor() + "\nAno de Lançamento: " + filme.getAnoLancamento()));
     }
 }
