@@ -39,4 +39,9 @@ public class Locadora {
         }
         return contagemPorAutor;
     }
+
+    // funcao para listar filmes unicos
+    public Set<Filme> listarFilmesUnicos(){
+        return new HashSet<>(filmes);
+    }
 }
