@@ -40,8 +40,15 @@ public class Locadora {
         return contagemPorAutor;
     }
 
-    // funcao para listar filmes unicos
+    // Funcao para listar filmes unicos
     public Set<Filme> listarFilmesUnicos(){
         return new HashSet<>(filmes);
+    }
+
+    // Funcao para mostrar filmes antes de um determinado periodo
+    public List<Filme> listarFilmesAntesDeAno(int ano){
+        return filmes.stream()
+                .filter(filme -> filme.getAnoLancamento() < ano) // filtra os filmes antes do ano forneçido
+                .collect(Collectors.toList()); // converte o resultado da pesquisa em uma lista
     }
 }

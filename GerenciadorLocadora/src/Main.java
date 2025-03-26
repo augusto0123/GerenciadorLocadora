@@ -40,5 +40,11 @@ public class Main {
         System.out.println("\nFilmes únicos: ");
         locadora.listarFilmesUnicos()
                 .forEach(filme -> System.out.println(filme.getTitulo()));
+
+        System.out.println("\nForneça um ano para filtrar os filmes lançados antes dessa data: ");
+        int ano = scanner.nextInt();
+
+        locadora.listarFilmesAntesDeAno(ano)
+                .forEach(filme -> System.out.println(filme.getTitulo() + " | " + filme.getAnoLancamento()));
     }
 }
