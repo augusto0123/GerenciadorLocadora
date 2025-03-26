@@ -36,5 +36,9 @@ public class Main {
         System.out.println("\nContagem de filmes por autor:");
         locadora.contagemFilmesPorDiretor()
                 .forEach((diretor, quantidade) -> System.out.println("Diretor: " + diretor + " | N° de filmes: " + quantidade));
+
+        System.out.println("\nFilmes únicos: ");
+        locadora.listarFilmesUnicos()
+                .forEach(filme -> System.out.println(filme.getTitulo()));
     }
 }
