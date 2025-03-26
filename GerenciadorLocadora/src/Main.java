@@ -28,5 +28,9 @@ public class Main {
 
         locadora.buscarFilmePorTitulo(titulo)
                 .forEach(filme -> System.out.println("Titulo: " + filme.getTitulo() + "\nDiretor: " + filme.getDiretor() + "\nAno de Lançamento: " + filme.getAnoLancamento()));
+
+        System.out.println("\nFilmes ordenados pelo ano de lançamento em ordem crescente: ");
+        locadora.ordenarFilmesPorAno()
+                .forEach(filme -> System.out.println(filme.getTitulo() + " | " + filme.getDiretor() + " | " + filme.getAnoLancamento()));
     }
 }
