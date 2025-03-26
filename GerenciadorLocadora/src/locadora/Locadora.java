@@ -2,9 +2,7 @@ package locadora;
 
 import model.Filme;
 
-import java.util.ArrayList;
-import java.util.Comparator;
-import java.util.List;
+import java.util.*;
 import java.util.stream.Collectors;
 
 public class Locadora {
@@ -29,5 +27,16 @@ public class Locadora {
         return filmes.stream()
                 .sorted(Comparator.comparingInt(Filme::getAnoLancamento))
                 .collect(Collectors.toList());
+    }
+
+    // Funcao para contar filmes por autor
+    public Map<String, Integer> contagemFilmesPorDiretor(){
+        Map<String, Integer> contagemPorAutor = new HashMap<>();
+
+        for (Filme filme : filmes){
+            contagemPorAutor.put(filme.getDiretor(),
+            contagemPorAutor.getOrDefault(filme.getDiretor(),0) +1);
+        }
+        return contagemPorAutor;
     }
 }
